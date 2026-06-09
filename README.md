@@ -87,6 +87,7 @@ JUnit 4 test cases are implemented for:
 --- 
 
 ## Screenshots
+
 - Opening Tracker
   ![Main Window](Screenshots/ExpenseTrackerMainScreenshot.PNG)
 - Add Income
