@@ -9,6 +9,10 @@ public class Transaction {
         this.description = description;
         this.amount = amount;
         this.type = type;
+
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Amount must be greater than zero.");
+        }
     }
 
     public String getDescription() {
