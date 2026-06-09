@@ -94,15 +94,77 @@ public class ExpenseTrackerGUI extends JFrame {
 
         add(southPanel, BorderLayout.SOUTH);
 
-        /*addButton.addActionListener(e -> addTransaction());
+        addButton.addActionListener(e -> addTransaction());
 
         deleteButton.addActionListener(e -> deleteTransaction());
 
-        saveButton.addActionListener(e -> saveData());
+        /*saveButton.addActionListener(e -> saveData());
 
         loadButton.addActionListener(e -> loadData());*/
     }
 
+    private void addTransaction() {
+
+        try {
+
+            String description = txtDescription.getText();
+
+            if (description.isEmpty()) {
+                throw new IllegalArgumentException("Description cannot be empty");
+            }
+
+            double amount = Double.parseDouble(txtAmount.getText());
+
+            String type =
+                    incomeButton.isSelected() ? "Income" : "Expense";
+
+            Transaction transaction =
+                    new Transaction(description, amount, type);
+
+            manager.addTransaction(transaction);
+
+            model.addRow(new Object[]{
+                    description,
+                    amount,
+                    type
+            });
+
+            updateBalance();
+
+            txtDescription.setText("");
+            txtAmount.setText("");
+
+        } catch (NumberFormatException e) {
+
+            JOptionPane.showMessageDialog(this, "Invalid amount entered.");
+
+        } catch (IllegalArgumentException e) {
+
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
+
+    private void deleteTransaction() {
+
+        int row = table.getSelectedRow();
+
+        if (row == -1) {
+
+            JOptionPane.showMessageDialog(this, "Select a transaction first.");
+
+            return;
+        }
+
+        manager.removeTransaction(row);
+        model.removeRow(row);
+
+        updateBalance();
+    }
+
+    private void updateBalance() {
+
+        balanceLabel.setText("Balance: Rs. " + manager.calculateBalance());
+    }
 
 
     public static void main(String[] args) {
