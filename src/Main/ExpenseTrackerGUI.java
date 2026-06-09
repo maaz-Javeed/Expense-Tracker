@@ -115,6 +115,10 @@ public class ExpenseTrackerGUI extends JFrame {
 
             double amount = Double.parseDouble(txtAmount.getText());
 
+            if(amount <= 0)
+            {
+                throw new IllegalArgumentException("Amount Must be Greater than zero");
+            }
             String type = incomeButton.isSelected() ? "Income" : "Expense";
 
             Transaction transaction = new Transaction(description, amount, type);
@@ -140,6 +144,7 @@ public class ExpenseTrackerGUI extends JFrame {
 
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
+
     }
 
     private void deleteTransaction() {
