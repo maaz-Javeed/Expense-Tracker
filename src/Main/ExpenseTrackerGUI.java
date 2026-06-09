@@ -98,9 +98,9 @@ public class ExpenseTrackerGUI extends JFrame {
 
         deleteButton.addActionListener(e -> deleteTransaction());
 
-        /*saveButton.addActionListener(e -> saveData());
+        saveButton.addActionListener(e -> saveData());
 
-        loadButton.addActionListener(e -> loadData());*/
+        loadButton.addActionListener(e -> loadData());
     }
 
     private void addTransaction() {
@@ -115,11 +115,9 @@ public class ExpenseTrackerGUI extends JFrame {
 
             double amount = Double.parseDouble(txtAmount.getText());
 
-            String type =
-                    incomeButton.isSelected() ? "Income" : "Expense";
+            String type = incomeButton.isSelected() ? "Income" : "Expense";
 
-            Transaction transaction =
-                    new Transaction(description, amount, type);
+            Transaction transaction = new Transaction(description, amount, type);
 
             manager.addTransaction(transaction);
 
@@ -166,6 +164,47 @@ public class ExpenseTrackerGUI extends JFrame {
         balanceLabel.setText("Balance: Rs. " + manager.calculateBalance());
     }
 
+    private void saveData() {
+
+        try {
+
+            FileHandler.saveTransactions(manager.getTransactions(), "transactions.txt");
+
+            JOptionPane.showMessageDialog(this, "Data saved successfully.");
+
+        } catch (IOException ex) {
+
+            JOptionPane.showMessageDialog(this, "Error saving file.");
+        }
+    }
+
+    private void loadData() {
+
+        try {
+
+            manager.getTransactions().clear();
+            model.setRowCount(0);
+
+            for (Transaction t : FileHandler.loadTransactions("transactions.txt")) {
+
+                manager.addTransaction(t);
+
+                model.addRow(new Object[]{
+                        t.getDescription(),
+                        t.getAmount(),
+                        t.getType()
+                });
+            }
+
+            updateBalance();
+
+            JOptionPane.showMessageDialog(this, "Data loaded successfully.");
+
+        } catch (IOException e) {
+
+            JOptionPane.showMessageDialog(this, "Error loading file.");
+        }
+    }
 
     public static void main(String[] args) {
         new ExpenseTrackerGUI();
