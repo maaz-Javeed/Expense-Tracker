@@ -94,23 +94,23 @@ JUnit 4 test cases are implemented for:
 - Add Expense
   ![Add Expense](Screenshots/AddExpense.PNG)
 - Selecting From Table
-  ![Main Window](Screenshots/Selecting.PNG)
+  ![Selecting](Screenshots/Selecting.PNG)
 - Deleting Transaction
-  ![Main Window](Screenshots/Delete.PNG)
+  ![Delete](Screenshots/Delete.PNG)
 - Expense Exceed Balance
-  ![Main Window](Screenshots/Expense-Exceed-Balance.PNG)
+  ![Expense Exceed](Screenshots/Expense-Exceed-Balance.PNG)
 - Delete Without Selecting
-  ![Main Window](Screenshots/Delete-Without-Selecting.PNG)
+  ![Delete Exception](Screenshots/Delete-Without-Selecting.PNG)
 - Saving Transactions
-  ![Main Window](Screenshots/Saving.PNG)
+  ![Saving](Screenshots/Saving.PNG)
 - Loading Transactions
-  ![Main Window](Screenshots/LoadingData.PNG)
+  ![Loading](Screenshots/LoadingData.PNG)
 - Adding Negative Number
-  ![Main Window](Screenshots/NegativeNumberCheck.PNG)
+  ![Negative Number](Screenshots/NegativeNumberCheck.PNG)
 - Number Format Exception
-  ![Main Window](Screenshots/NumberFormatCheck.PNG)
+  ![Number Format Exception](Screenshots/NumberFormatCheck.PNG)
 - Unit Test
-  ![Main Window](Screenshots/testCasesPass.PNG)
+  ![Test Case](Screenshots/testCasesPass2.PNG)
 
 ---
 
