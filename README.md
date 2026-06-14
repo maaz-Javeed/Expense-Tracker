@@ -79,7 +79,7 @@ JUnit 4 test cases are implemented for:
 ---
 ## How to Run
 1. Clone the repository.
-2. Open the project in IntelliJ IDEA.
+2. Open the project in IntelliJ IDEA / Eclipse.
 3. Build the project.
 4. Run ExpenseTrackerGUI.java.
 5. Use the graphical interface to manage transactions.
