@@ -87,12 +87,13 @@ JUnit 4 test cases are implemented for:
 --- 
 
 ## Screenshots
+
 - Opening Tracker
-  ![Main Window](Screenshots/ExpenseTrackerMainScreenshot.PNG)
+![Main Window](Screenshots/ExpenseTrackerMainScreenshot.PNG)
 - Add Income
-  ![Add Income](Screenshots/AddTransaction.PNG)
+![Add Income](Screenshots/AddTransaction.PNG)
 - Add Expense
-  ![Add Expense](Screenshots/AddExpense.PNG)
+![Add Expense](Screenshots/AddExpense.PNG)
 - Selecting From Table
   ![Selecting](Screenshots/Selecting.PNG)
 - Deleting Transaction
